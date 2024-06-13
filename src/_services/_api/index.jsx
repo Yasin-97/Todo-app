@@ -21,16 +21,16 @@ export const addNewTodo = async (data) => {
 
 export const editTodo = async (data) => {
   try {
-    const res = await axiosInstance.put(`todos/${data.id}`, data);
+    const res = await axiosInstance.patch(`todos/${data.id}`, data);
     return res.data;
   } catch (error) {
     toast.error(`Error: failed to edit your todo item`);
   }
 };
 
-export const removeTodo = async (todoId) => {
+export const removeTodo = async (id) => {
   try {
-    const res = await axiosInstance.delete(`todos/${todoId}`);
+    const res = await axiosInstance.delete(`todos/${id}`);
     return res.data;
   } catch (error) {
     toast.error(`Error: failed to remove your todo item`);
