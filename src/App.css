@@ -92,4 +92,163 @@ main{
     align-items: center;
 }
 
+.overlay {
+    width: 100%; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0;
+    right: 0; 
+    background-color: rgba(0, 0, 21, 0.843); 
+  }
+  
+  .modal {
+    width: 450px;
+    padding: 1rem; 
+    border-radius: 16px;
+    background-color: #1c1c24;
+  }
+  
+  .modal-header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem; 
+    border-bottom: 2px solid #4B5563; 
+  }
+  
+  .modal-title{
+    font-weight: 600; 
+  line-height: 26px; 
+  text-align: left; 
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  }
+  
+  .modal-close-btn{
+    font-weight: 600; 
+    font-size: 18px; 
+    color: #808191; 
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  .add-todo-form{
+    width: 100%; 
+    margin-top: 16px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+  }
+  
+  .add-todo-form .form-btn-container{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 40px; 
+    gap: 1.25rem; 
+  }
+  
+  .add-todo-form .form-btn-container .form-btn-add{
+        background-color: #68d391; 
+        flex: 2;
+    }
+  
+  .add-todo-form .form-btn-container .form-btn-cancel{
+    flex: 1; 
+    background-color: #6b7280;
+  }
+  
+  
+  
+  
+  .form-field-label-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    width: 100%;
+  }
+  
+  .form-field-label{
+    font-weight: 600; 
+    font-size: 14px; 
+    line-height: 22px; 
+    color: #808191; 
+    margin-bottom: 10px; 
+  }
+  
+  .form-input{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    outline: none;
+    border: 1px solid #3a3a43;
+    background-color: transparent;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 600; 
+    border-radius: 10px;
+  }
+  
+  .form-input::placeholder {
+    color: #4b5264;
+    font-weight: 600;
+  }
+  
+  .main-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8c6dfd;
+    font-weight: 600; 
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+    min-height: 52px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  
+  @media (max-width: 640px) {
+    .modal {
+      width: 95%; 
+      padding: 1rem; 
+    }
+  
+    .modal-header{ 
+            padding-bottom: 0.25rem; 
+            margin-bottom: 0.25rem; 
+    }
+  
+    .modal-title {
+        font-size: 16px; 
+        line-height: 22px; 
+      }
+  
+      .form-input{
+        padding-left: 25px;
+        padding-right: 25px;
+        min-width: 300px;
+      }
+  }
 
