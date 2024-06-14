@@ -18,7 +18,6 @@ const Todos = () => {
   useEffect(() => {
     dispatch(getTodosAsync());
   }, []);
-
   const [isAddTodoModalOpen, setIsAddTodoModalOpen] = useState(false);
   const [todoForm, setTodoForm] = useState({
     todo: "",
@@ -51,7 +50,7 @@ const Todos = () => {
     dispatch(editTodoAsync(newTodoData));
   };
 
-  const filteredTodos = useCallback(() => {
+  const filteredTodos = () => {
     switch (todoFilters[filterState]) {
       case "Complete":
         return todos.data.filter((todo) => todo.completed);
@@ -62,7 +61,7 @@ const Todos = () => {
       default:
         return todos.data;
     }
-  }, [filterState]);
+  };
 
   const changefilterState = () => {
     setFilterState((prev) => (prev >= 2 ? 0 : prev + 1));
