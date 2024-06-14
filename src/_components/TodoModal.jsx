@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import Button from "./Button";
 import FormField from "./FormField";
 
-const AddTodoModal = ({
+const TodoModal = ({
   data,
   isModalOpen,
   handleClose,
@@ -14,6 +14,7 @@ const AddTodoModal = ({
     <Modal title={"ADD TODO"} open={isModalOpen} handleClose={handleClose}>
       <form onSubmit={handleSubmit} className="add-todo-form">
         <FormField
+          required
           labelName="Todo"
           placeholder="Add New Todo"
           inputType="text"
@@ -21,6 +22,7 @@ const AddTodoModal = ({
           handleChange={(e) => handleChange("todo", e)}
         />
         <FormField
+          required
           labelName="Estimation"
           placeholder="Estimate Time In Minutes"
           inputType="numebr"
@@ -45,4 +47,4 @@ const AddTodoModal = ({
   );
 };
 
-export default AddTodoModal;
+export default TodoModal;

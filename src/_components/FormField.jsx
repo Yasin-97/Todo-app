@@ -8,6 +8,7 @@ const FormField = ({
   value,
   handleChange,
   isLoading,
+  required,
 }) => {
   return (
     <label className="form-field-label-wrapper">
@@ -15,6 +16,7 @@ const FormField = ({
 
       <input
         disabled={isLoading}
+        required={required}
         spellCheck
         value={value}
         onChange={handleChange}

@@ -3,7 +3,7 @@ import Checkbox from "./Checkbox";
 import { AiFillEdit } from "react-icons/ai";
 import { FaTrash } from "react-icons/fa";
 import { formatEstimation } from "../_utils";
-import AddTodoModal from "./AddTodoModal";
+import TodoModal from "./TodoModal";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editTodoAsync } from "../_redux/todoSlice";
@@ -45,7 +45,7 @@ export default function SingleTodo({ data, onToggleComplete, onRemove }) {
           />
         </div>
       </div>
-      <AddTodoModal
+      <TodoModal
         data={todoForm}
         isModalOpen={isEditModalOpen}
         handleSubmit={handleEdit}
