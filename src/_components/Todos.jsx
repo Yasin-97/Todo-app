@@ -13,11 +13,9 @@ const Todos = () => {
 
   return (
     <div className="todos-container">
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-        {todos?.data?.map((todo) => (
-          <SingleTodo key={todo.id} data={todo} />
-        ))}
-      </div>
+      {todos?.data?.map((todo) => (
+        <SingleTodo key={todo.id} data={todo} />
+      ))}
     </div>
   );
 };

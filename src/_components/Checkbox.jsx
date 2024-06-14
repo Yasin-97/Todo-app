@@ -3,9 +3,11 @@ import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 
 export default function Checkbox({ checked = false, onClick }) {
   return (
-    <div onClick={onClick} style={{ display: "flex", alignItems: "center" }}>
-      {!checked && <ImCheckboxUnchecked style={{ fontSize: "24px" }} />}
-      {checked && <ImCheckboxChecked style={{ fontSize: "24px" }} />}
+    <div onClick={onClick} className="todo-checkbox">
+      {!checked && <ImCheckboxUnchecked className="single-todo-icon" />}
+      {checked && (
+        <ImCheckboxChecked className="single-todo-icon single-todo-complete-icon" />
+      )}
     </div>
   );
 }

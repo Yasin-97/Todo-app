@@ -11,31 +11,18 @@ export default function SingleTodo({
 }) {
   return (
     <div className="single-todo-container">
-      <div className="single-todo" style={{ gap: "24px" }}>
+      <div className="single-todo">
         <Checkbox checked={data.completed} onClick={onToggleComplete} />
 
-        <p
-          style={{
-            textAlign: "left",
-            alignSelf: "end",
-            width: "100%",
-            fontWeight: "bold",
-          }}
-        >
-          {data.todo}{" "}
-          <span style={{ opacity: ".8" }}>
-            ({(data.estimation / 60).toFixed(1)} h)
-          </span>
+        <p className="single-todo-text">
+          {data.todo} <span>({(data.estimation / 60).toFixed(1)} h)</span>
         </p>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-          }}
-        >
-          <AiFillEdit onClick={onEdit} style={{ fontSize: "24px" }} />
-          <FaTrash onClick={onRemove} style={{ fontSize: "24px" }} />
+        <div className="single-todo-icon-container">
+          <AiFillEdit onClick={onEdit} className="single-todo-icon" />
+          <FaTrash
+            onClick={onRemove}
+            className="single-todo-icon single-todo-trash-icon"
+          />
         </div>
       </div>
     </div>
