@@ -8,9 +8,7 @@ export default function Modal({ open, title, children, handleClose }) {
     <div className="overlay">
       <div className="modal">
         <div className="modal-header">
-          <h3 className="font-semibold text-[18px] leading-[26px] text-left text-gray-100 truncate">
-            {title}
-          </h3>
+          <h3 className="modal-title">{title}</h3>
           <button onClick={handleClose} className="modal-close-btn">
             X
           </button>
