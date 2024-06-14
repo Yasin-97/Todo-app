@@ -1,7 +1,11 @@
+import "./App.css";
+
+import Todos from "./_components/Todos";
+
 function App() {
   return (
     <>
-      <p>test</p>
+      <Todos />
     </>
   );
 }
