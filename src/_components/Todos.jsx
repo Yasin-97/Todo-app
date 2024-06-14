@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addNewTodoAsync,
@@ -8,7 +8,9 @@ import {
 } from "../_redux/todoSlice";
 import SingleTodo from "./SingleTodo";
 import AddTodoModal from "./AddTodoModal";
+import Button from "./Button";
 
+const todoFilters = ["All", "Complete", "Incomplete"];
 const Todos = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo);
@@ -23,6 +25,8 @@ const Todos = () => {
     estimation: 0,
     completed: false,
   });
+
+  const [filterState, setFilterState] = useState(0);
 
   const handleSubmitNewTodo = async (e) => {
     e.preventDefault();
@@ -47,16 +51,52 @@ const Todos = () => {
     dispatch(editTodoAsync(newTodoData));
   };
 
+  const filteredTodos = useCallback(() => {
+    switch (todoFilters[filterState]) {
+      case "Complete":
+        return todos.data.filter((todo) => todo.completed);
+
+      case "Incomplete":
+        return todos.data.filter((todo) => !todo.completed);
+
+      default:
+        return todos.data;
+    }
+  }, [filterState]);
+
+  const changefilterState = () => {
+    setFilterState((prev) => (prev >= 2 ? 0 : prev + 1));
+  };
+
   return (
     <>
-      <button onClick={() => setIsAddTodoModalOpen(true)}>
-        edit the todo item
-      </button>
+      <h1 className="taskChain">TaskChain </h1>
+      <div
+        className=""
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "16px",
+        }}
+      >
+        <Button
+          handleClick={changefilterState}
+          title={todoFilters[filterState]}
+          className={"filter-toggle-btn"}
+        />
+
+        <Button
+          handleClick={() => setIsAddTodoModalOpen(true)}
+          btnType="button"
+          title={"Add Todo"}
+          className="add-todo-btn"
+        />
+      </div>
       <div className="todos-container">
-        {!todos?.data?.length && (
+        {!filteredTodos()?.length && (
           <p className="empty-todo-text">You got nothing to do for now !</p>
         )}
-        {todos?.data?.map((todo) => (
+        {filteredTodos()?.map((todo) => (
           <SingleTodo
             key={todo.id}
             data={todo}

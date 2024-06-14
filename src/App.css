@@ -11,7 +11,15 @@ main{
     max-width: 640px;
     margin: 20px auto;
 }
-
+.taskChain{
+  margin: 40px auto;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+  width: 100%;
+  text-align: center;
+}
 .todos-container{
     margin: auto;
     max-width: 640px;
@@ -140,7 +148,14 @@ main{
     cursor: pointer;
   }
   
-  
+  .add-todo-btn{
+    padding: 0 36px !important;
+  }
+
+  .filter-toggle-btn{
+    width: 100px;
+    background-color: #6b7280 !important;
+  }
   
   
   
