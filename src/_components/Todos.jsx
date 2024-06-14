@@ -21,7 +21,7 @@ const Todos = () => {
   const [isAddTodoModalOpen, setIsAddTodoModalOpen] = useState(false);
   const [todoForm, setTodoForm] = useState({
     todo: "",
-    estimation: 0,
+    estimation: "",
     completed: false,
   });
 
@@ -86,7 +86,7 @@ const Todos = () => {
       </div>
       <div className="todos-container">
         {!filteredTodos()?.length && (
-          <p className="empty-todo-text">You got nothing to do for now !</p>
+          <p className="empty-todo-text">There Is No Task !</p>
         )}
         {filteredTodos()?.map((todo) => (
           <SingleTodo
