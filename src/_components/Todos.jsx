@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addNewTodoAsync,
@@ -68,16 +68,9 @@ const Todos = () => {
   };
 
   return (
-    <>
+    <div className="app">
       <h1 className="taskChain">TaskChain </h1>
-      <div
-        className=""
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginBottom: "16px",
-        }}
-      >
+      <div className="todo-btn-chain">
         <Button
           handleClick={changefilterState}
           title={todoFilters[filterState]}
@@ -116,7 +109,7 @@ const Todos = () => {
           setIsAddTodoModalOpen(false);
         }}
       />
-    </>
+    </div>
   );
 };
 

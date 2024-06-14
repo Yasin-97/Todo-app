@@ -7,9 +7,17 @@ body{
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-main{
-    max-width: 640px;
-    margin: 20px auto;
+.app{
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+.todo-btn-chain{
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 .taskChain{
   margin: 40px auto;
@@ -60,11 +68,13 @@ main{
 .single-todo-text{
     text-align: left;
     align-self: end;
+    font-size: 14px;
     width: 100%;
     font-weight: bold;
     margin: 0 12px;
 }
 .single-todo-text span{
+  font-size: 12px;
     opacity: .8
 }
 
@@ -84,7 +94,7 @@ main{
 
 .single-todo-icon{
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .single-todo-trash-icon{
@@ -228,7 +238,7 @@ main{
     align-items: center;
     background-color: #8c6dfd;
     font-weight: 600; 
-    font-size: 16px;
+    font-size: 14px;
     line-height: 26px;
     color: white;
     min-height: 52px;
